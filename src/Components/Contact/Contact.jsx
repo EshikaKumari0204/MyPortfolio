@@ -41,20 +41,15 @@ const Contact = () => {
             <div className="contact-info"><IoLocationOutline size={20}/> <p>Patna ,Bihar</p></div>
           </div>
          
-          <div className="socialmedia">
-            
-            <a className="social-links" href="https://leetcode.com/u/Eshika_Gupta0204/"><SiLeetcode size={30}/></a>
-            <a className="social-links" href="https://www.linkedin.com/in/eshika-kumari-5244a0327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><CiLinkedin size={30} /></a>
-            <a className="social-links" href="https://github.com/EshikaKumari0204"><SiGithub size={30}/></a>
-          </div>
+         
         </div>
         <div className="contact-right">
           <form onSubmit={onSubmit}>
        
             <label htmlFor="name">Your Name</label>
-            <input type="text" placeholder="Enter your name " name="name" />
+            <input type="text" placeholder="Enter your name " name="name" required />
              <label htmlFor="email">Your Email</label>
-            <input type="email" placeholder="Enter your mail " name="email"/>
+            <input type="email" placeholder="Enter your mail " name="email" required/>
              <label htmlFor="message">Write your message here</label>
             <textarea name="message" id="message" rows="8" placeholder="Enter your message"></textarea>
             <button type="submit" className="submitnow" >Submit now</button>

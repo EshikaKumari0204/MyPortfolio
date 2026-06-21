@@ -1,8 +1,8 @@
 import React from 'react'
 import "./Project.css"
 import chatbot from "../../assets/chatbot.png"
-import youtube from "../../assets/youtube.png"
-import gemini from "../../assets/gemini.png"
+import basket from "../../assets/basket_bay.jpg"
+import ems from "../../assets/ems.jpg"
 import {FaGithub} from "react-icons/fa"
 const Project = () => {
   return (
@@ -15,17 +15,18 @@ const Project = () => {
           <div className="tech-used"><p>AI & LLM</p><p>Vector Database</p></div>
            <div className="gotogit"><a href="https://github.com/EshikaKumari0204/Chatbot-Project">View on Github</a><FaGithub size={20}/></div>
         </div>
+        
            <div className="project">
-          <div ><img src={youtube} alt="" /></div>
-          <p>Youtube Clone</p>
-          <div className="tech-used"><p>React</p><p>CSS</p></div>
-           <div className="gotogit"><a href="https://github.com/EshikaKumari0204/ReactProjectYoutubeClone">View on Github</a><FaGithub size={20}/></div>
+          <div ><img src={ems} alt="" /></div>
+          <p>Employee Management Sys</p>
+          <div className="tech-used"><p>MERN Stack</p></div>
+           <div className="gotogit"><a href="https://github.com/EshikaKumari0204/EMS">View on Github</a><FaGithub size={20}/></div>
         </div>
              <div className="project">
-          <div ><img src={gemini} alt="" /></div>
-          <p>Gemini Clone</p>
-          <div className="tech-used"><p>React</p><p>GenAI</p></div>
-        <div className="gotogit"><a href="https://github.com/EshikaKumari0204/ReactProjectGeminiClone">View on Github</a><FaGithub size={20}/></div>
+          <div ><img src={basket} alt="" /></div>
+          <p>Basket Bay</p>
+          <div className="tech-used"><p>MERN Stack</p></div>
+        <div className="gotogit"><a href="https://github.com/EshikaKumari0204/GroceryDeliveryMernProject">View on Github</a><FaGithub size={20}/></div>
         </div>
       </div>
     </div>

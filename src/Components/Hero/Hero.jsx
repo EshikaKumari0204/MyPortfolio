@@ -6,11 +6,18 @@ const Hero = () => {
   return (
     <div class="hero-section">
       <img src={profile_pic} alt="" />
-      <h1><span>I'm Eshika Kumari </span>, Frontend Developer crafting intuitive web experience.</h1>
-      <p>I am a Computer Science student exploring Frontend Development building clean and responsive user-friendly interface</p>
+      <h1><span>I'm Eshika Kumari </span>, Web Developer crafting intuitive web experience.</h1>
+      <p>I am a Computer Science student exploring Full Stack Development building clean and responsive user-friendly interface</p>
       <div className="herobuttons">
-        <div className="connectwithme"><AnchorLink className="anchor-links" offset={50} href="#contact">Connect with me </AnchorLink></div>
-        <div className="resume" onClick={()=>window.open('/2406060_Eshika_CSE.pdf','_blank')}>My Resume</div>
+        <div className="connectwithme">  <a
+    href="https://www.linkedin.com/in/eshika-kumari"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="anchor-links"
+  >
+    LinkedIn
+  </a></div>
+        <div className="resume" onClick={()=>window.open('/Resume.pdf','_blank')}>My Resume</div>
       </div>
     </div>
   )

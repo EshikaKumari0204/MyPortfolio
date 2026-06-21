@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Navbar.css"
-import logo from "../../assets/logo.jpeg"
+import logo from "../../assets/eshika_logo_svg.svg"
 import {useState,useRef} from "react"
 import cross from "../../assets/cross1.svg"
 import menubar from "../../assets/menu.svg"

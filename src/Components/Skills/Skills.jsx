@@ -5,14 +5,14 @@ import nodejs from "../../assets/nodejs.png"
 import cpp from "../../assets/c++.png"
 import github from "../../assets/github.png"
 import react from "../../assets/react.png"
-import tailwindcss from "../../assets/tailwindcss.png"
+import python from "../../assets/python.jpg"
 const Skills = () => {
   return (
     <div id="skills" class="skills-section">
       <div className="skills-title"><h1>My Skills</h1></div>
       <div className="skills-container">
-         <div className="skill"><img src={tailwindcss} alt="js" />
-        <p>Tailwindcss</p></div>
+         <div className="skill"><img src={python} alt="js" />
+        <p>Python</p></div>
         <div className="skill"><img src={js} alt="js" />
         <p>Javascript</p></div>
         
