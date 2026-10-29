@@ -1,0 +1,141 @@
+.animated-bg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: var(--orb-opacity, 0.18);
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.5s ease;
+}
+
+/* Orb 1 - Purple / Violet */
+.bg-orb-1 {
+  width: min(550px, 60vw);
+  height: min(550px, 60vw);
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(circle, #b923e1 0%, rgba(185, 35, 225, 0.2) 65%, transparent 75%);
+  animation: floatOrb1 22s ease-in-out infinite alternate;
+}
+
+/* Orb 2 - Amber / Warm Orange */
+.bg-orb-2 {
+  width: min(600px, 65vw);
+  height: min(600px, 65vw);
+  top: 35%;
+  right: -12%;
+  background: radial-gradient(circle, #da7c25 0%, rgba(218, 124, 37, 0.2) 65%, transparent 75%);
+  animation: floatOrb2 26s ease-in-out infinite alternate;
+}
+
+/* Orb 3 - Deep Magenta / Indigo */
+.bg-orb-3 {
+  width: min(500px, 55vw);
+  height: min(500px, 55vw);
+  bottom: -15%;
+  left: 20%;
+  background: radial-gradient(circle, #7928ca 0%, rgba(121, 40, 202, 0.18) 65%, transparent 75%);
+  animation: floatOrb3 24s ease-in-out infinite alternate;
+}
+
+/* Orb 4 - Ambient Accent Glow */
+.bg-orb-4 {
+  width: min(450px, 50vw);
+  height: min(450px, 50vw);
+  top: 15%;
+  left: 45%;
+  background: radial-gradient(circle, #5b1380 0%, rgba(91, 19, 128, 0.15) 60%, transparent 75%);
+  animation: floatOrb4 28s ease-in-out infinite alternate;
+}
+
+/* ========================================================
+   Light Mode Subtle Animated Background (Pastel Purple & Pink)
+   ======================================================== */
+[data-theme="light"] .bg-orb {
+  filter: blur(85px);
+  opacity: 0.65;
+}
+
+[data-theme="light"] .bg-orb-1 {
+  background: radial-gradient(circle, rgba(185, 35, 225, 0.3) 0%, rgba(216, 115, 248, 0.16) 45%, transparent 70%);
+}
+
+[data-theme="light"] .bg-orb-2 {
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.26) 0%, rgba(251, 146, 60, 0.16) 45%, transparent 70%);
+}
+
+[data-theme="light"] .bg-orb-3 {
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.26) 0%, rgba(192, 132, 252, 0.14) 45%, transparent 70%);
+}
+
+[data-theme="light"] .bg-orb-4 {
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.22) 0%, rgba(244, 114, 182, 0.12) 50%, transparent 70%);
+}
+
+/* Keyframe animations using 3D transforms */
+@keyframes floatOrb1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(8vw, 12vh, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(15vw, 4vh, 0) scale(0.95);
+  }
+}
+
+@keyframes floatOrb2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-10vw, -10vh, 0) scale(1.06);
+  }
+  100% {
+    transform: translate3d(-14vw, 8vh, 0) scale(0.92);
+  }
+}
+
+@keyframes floatOrb3 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-8vw, -12vh, 0) scale(1.1);
+  }
+  100% {
+    transform: translate3d(10vw, -6vh, 0) scale(0.96);
+  }
+}
+
+@keyframes floatOrb4 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.95);
+  }
+  50% {
+    transform: translate3d(10vw, -8vh, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(-6vw, 10vh, 0) scale(1);
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .bg-orb {
+    animation: none !important;
+    transform: none !important;
+  }
+}

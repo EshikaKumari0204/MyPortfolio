@@ -1,33 +1,49 @@
-import React from 'react'
-import "./Skills.css"
-import js from "../../assets/js.png"
-import nodejs from "../../assets/nodejs.png"
-import cpp from "../../assets/c++.png"
-import github from "../../assets/github.png"
-import react from "../../assets/react.png"
-import python from "../../assets/python.jpg"
+import React from 'react';
+import './Skills.css';
+import python from '../../assets/python.svg';
+import js from '../../assets/javascript.svg';
+import react from '../../assets/react.svg';
+import nodejs from '../../assets/nodejs.svg';
+import gitIcon from '../../assets/git.svg';
+import githubIcon from '../../assets/github-icon.svg';
+import cpp from '../../assets/cplusplus.svg';
+import mongodb from '../../assets/mongodb.svg';
+import mysql from '../../assets/mysql.svg';
+import ml from '../../assets/ml.svg';
+
+const skillsData = [
+  { name: 'Python', icon: python, alt: 'Python logo' },
+  { name: 'JavaScript', icon: js, alt: 'JavaScript logo' },
+  { name: 'React.js', icon: react, alt: 'React.js logo' },
+  { name: 'Node.js', icon: nodejs, alt: 'Node.js logo' },
+  { name: 'Git & GitHub', icon: gitIcon, alt: 'Git logo', extraIcon: githubIcon, extraAlt: 'GitHub logo' },
+  { name: 'C++', icon: cpp, alt: 'C++ logo' },
+  { name: 'MongoDB', icon: mongodb, alt: 'MongoDB logo' },
+  { name: 'MySQL', icon: mysql, alt: 'MySQL logo' },
+  { name: 'Machine Learning', icon: ml, alt: 'TensorFlow / Machine Learning logo' }
+];
+
 const Skills = () => {
   return (
-    <div id="skills" class="skills-section">
-      <div className="skills-title"><h1>My Skills</h1></div>
-      <div className="skills-container">
-         <div className="skill"><img src={python} alt="js" />
-        <p>Python</p></div>
-        <div className="skill"><img src={js} alt="js" />
-        <p>Javascript</p></div>
-        
-          <div className="skill"><img src={react} alt="react" />
-          <p>React.js</p></div>
-           <div className="skill"><img src={nodejs} alt="nodejs" />
-         <p>Node.js</p></div>
-           <div className="skill"><img src={github} alt="github" />
-           <p>Git and Github</p></div>
-            <div className="skill"><img src={cpp} alt="cpp" />
-            <p>C++</p></div>
+    <section id="skills" className="skills-section reveal-on-scroll">
+      <div className="skills-title">
+        <h1>My Skills</h1>
       </div>
-    </div>
-  )
-}
+      <div className="skills-container">
+        {skillsData.map((skill, index) => (
+          <div key={index} className="skill">
+            <div className={`skill-icon-wrapper${skill.extraIcon ? ' skill-icon-dual' : ''}`}>
+              <img src={skill.icon} alt={skill.alt} className="skill-img" />
+              {skill.extraIcon && (
+                <img src={skill.extraIcon} alt={skill.extraAlt} className="skill-img skill-img-github" />
+              )}
+            </div>
+            <p className="skill-name">{skill.name}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
 
-export default Skills
-
+export default Skills;

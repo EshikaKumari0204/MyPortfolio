@@ -1,30 +1,58 @@
-import React from 'react'
-import logo from "../../assets/eshika_logo_svg.svg"
-import { FaRegUser } from "react-icons/fa";
-import { TbBrandLeetcode } from "react-icons/tb";
-import "./Footer.css"
-import { LuGithub } from "react-icons/lu";
+import React from 'react';
+import logo from '../../assets/eshika_logo_svg.svg';
+import { TbBrandLeetcode } from 'react-icons/tb';
+import { LuGithub } from 'react-icons/lu';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import './Footer.css';
+
 const Footer = () => {
   return (
-    <div class="footer">
-      <div className="top">
-        <div className="top-left"><p>Developer | Problem Solver | Learner</p></div>
-        <div className="top-right">
-          <a className="subscribe" href="https://leetcode.com/u/Eshika_Gupta0204/"> <TbBrandLeetcode size={20} />Leetcode</a>
-          <a className="subscribe" href="https://github.com/EshikaKumari0204"> <LuGithub size={20} />Github</a>
+    <footer className="footer">
+      <div className="footer-top">
+        <div className="footer-top-left">
+          <img src={logo} alt="Eshika Kumari logo" className="footer-logo" />
+          <p className="footer-tagline">Developer | Problem Solver | Learner</p>
+        </div>
+        <div className="footer-top-right">
+          <a
+            className="footer-social-btn"
+            href="https://leetcode.com/u/Issue_0204/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Eshika Kumari on LeetCode"
+          >
+            <TbBrandLeetcode size={20} />
+            <span>Leetcode</span>
+          </a>
+          <a
+            className="footer-social-btn"
+            href="https://github.com/EshikaKumari0204"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Eshika Kumari on GitHub"
+          >
+            <LuGithub size={20} />
+            <span>Github</span>
+          </a>
         </div>
       </div>
-      <hr />
-      <div className="bottom">
-        <div className="bottom-left">&copy; Eshika Kumari. All rights reserved.</div>
-        <div className="bottom-right">
-          <p>Terms of service </p>
-          <p>Privacy Policy</p>
-          <p>Connect with me</p>
-        </div>
-      </div>
-    </div>
-  )
-}
 
-export default Footer
+      <hr className="footer-divider" />
+
+      <div className="footer-bottom">
+        <div className="footer-bottom-left">
+          <p>&copy; {new Date().getFullYear()} Eshika Kumari. All rights reserved.</p>
+        </div>
+        <div className="footer-bottom-right">
+          <span>Terms of service</span>
+          <span>Privacy Policy</span>
+          <AnchorLink href="#contact" className="footer-contact-link">
+            Connect with me
+          </AnchorLink>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

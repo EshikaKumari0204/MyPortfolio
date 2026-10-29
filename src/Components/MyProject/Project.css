@@ -1,147 +1,207 @@
-.project-section{
-   margin:1.5em 5em;
-   display:flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap:6em;
-   margin-top:5em;
-}
-.project-heading{
-  transition:0.3s;
-
- color:#B415FF;
-}
-.project-heading:hover{
- 
-color:white;
-
-}
-
-.projects-container{
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap:2em;
-}
-.project{
-   display:flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap:1em;
-    padding:1em 1em;
-    border:2px solid rgb(205, 201, 201);
-  border-radius: 30px;
-  transition:0.3s;
-  cursor: pointer;
-
-}
-.project:hover{
-  border:2px solid #B415FF;
-  background-image:linear-gradient(45deg,#44032c,#582300);
-  transform:scale(1.1);
-}
-.project img{
-  height:200px;
-  width:200px;
-    border-radius:10px;
-
-  object-fit: cover;
-}
-.tech-used{
- display: flex;
-
-  gap:10px;
-}
-.tech-used p{
- 
- 
-border:1px solid rgb(205, 201, 201);
-padding:2px 7px;
-border-radius:5px;
-transition:0.3s;
-}
-.gotogit{
-  display:flex;
-  gap:1em;
+.project-section {
+  max-width: var(--section-max-width);
+  margin: var(--section-padding-y) auto;
+  padding: 0 var(--container-padding-x);
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
-
-}
-.gotogit a{ 
-  transition:0.3s;
-}
-.gotogit a:hover{ 
- color:rgb(139, 134, 134);
+  gap: var(--heading-content-gap);
 }
 
-@media(max-width:1020px){
-  .project-section{
-    margin-inline:4em;
-  }
-  .projects-container{
-    gap:1em;
+.project-heading h1 {
+  text-align: center;
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 700;
+  color: #b415ff;
+  transition: color 0.3s ease;
+  letter-spacing: -0.01em;
+}
 
+.project-heading h1:hover {
+  color: var(--text-primary);
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--card-gap);
+  width: 100%;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.5rem 1.4rem;
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              background-color 0.3s ease,
+              box-shadow 0.35s ease;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  border-color: var(--border-hover);
+  background-color: var(--bg-card-hover);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(180, 21, 255, 0.2);
+}
+
+.project-image-container {
+  width: 100%;
+  height: 200px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
+}
+
+.project-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.tech-used {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.tech-tag {
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  padding: 3px 10px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Tech icon badges row */
+.tech-icons-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: -0.2rem;
+}
+
+.tech-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  cursor: default;
+}
+
+.tech-icon-badge:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-hover);
+}
+
+.gotogit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.3rem;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.55rem 1.2rem;
+  border-radius: 20px;
+  background: var(--theme-toggle-bg);
+  border: 1px solid var(--border-color);
+  transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+}
+
+.github-link:hover {
+  color: #b923e1;
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.github-icon {
+  flex-shrink: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
   }
 }
-@media(max-width:955px){
-  .project-section{
-    margin-inline:1.3em;
+
+@media (max-width: 720px) {
+  .project-section {
+    gap: 2.5rem;
+    margin: 2.5rem auto 4.5rem;
   }
-  .projects-container{
-    gap:2em;
-    grid-template-columns: 1fr 1fr ;
+
+  .projects-container {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
   }
-  .project{
-    gap:1em;
-    padding:1em 0.7em;
-   
-  }
-  .project:hover{
-    transform:scale(1.1);
-  }
-}
-@media(max-width:804px){
-  .project-section{
-    margin-inline:0.5em;
-  }
-  .project{
-    padding:0.8em 1.2em;
-    gap:0.7em;
-    font-size:0.8em;
+
+  .project-image-container {
+    height: 190px;
   }
 }
-@media(max-width:622px){
-  .projects-container{
-    gap:2em;
-    grid-template-columns: 1fr ;
+
+@media (max-width: 480px) {
+  .project-section {
+    padding: 0 1rem;
   }
-   .project{
-    padding:1em 0.6em;
-    gap:0.6em;
-    font-size:1em;
+
+  .project-card {
+    padding: 1.1rem;
+    border-radius: 18px;
   }
-    .project img{ 
-      width:220px;
-      height:220px;
-    }
-}
-@media(max-width:440px){
-  .project-section{
-    gap:3.5em;
-    margin-inline:0.5em;
+
+  .project-image-container {
+    height: 175px;
   }
-  .projects-container{
-    gap:2em;
+
+  .project-title {
+    font-size: 1.15rem;
   }
-    .project{
-    padding:0.8em 0.8em;
-    gap:0.7em;
-    font-size:0.8em;
-  }
-   .project img{ 
-      width:200px;
-      height:200px;
-    }
 }

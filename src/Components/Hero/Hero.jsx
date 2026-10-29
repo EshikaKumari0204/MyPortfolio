@@ -1,26 +1,42 @@
-import React from 'react'
-import profile_pic from "../../assets/profile2.jpeg"
-import "./Hero.css"
-import AnchorLink from "react-anchor-link-smooth-scroll"
+import React from 'react';
+import profile_pic from '../../assets/profilepic2.jpeg';
+import './Hero.css';
+
 const Hero = () => {
   return (
-    <div class="hero-section">
-      <img src={profile_pic} alt="" />
-      <h1><span>I'm Eshika Kumari </span>, Web Developer crafting intuitive web experience.</h1>
-      <p>I am a Computer Science student exploring Full Stack Development building clean and responsive user-friendly interface</p>
-      <div className="herobuttons">
-        <div className="connectwithme">  <a
-    href="https://www.linkedin.com/in/eshika-kumari"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="anchor-links"
-  >
-    LinkedIn
-  </a></div>
-        <div className="resume" onClick={()=>window.open('/Resume.pdf','_blank')}>My Resume</div>
+    <section id="home" className="hero-section reveal-on-scroll">
+      <div className="hero-avatar-wrapper">
+        <img
+          src={profile_pic}
+          alt="Eshika Kumari"
+          className="hero-avatar"
+        />
       </div>
-    </div>
-  )
-}
+      <h1>
+        <span>I'm Eshika Kumari</span>, Web Developer crafting intuitive web experience.
+      </h1>
+      <p className="hero-description">
+        I am a Computer Science student exploring Full Stack Development building clean and responsive user-friendly interface
+      </p>
+      <div className="herobuttons">
+        <a
+          href="https://www.linkedin.com/in/eshika-kumari"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="connectwithme"
+        >
+          LinkedIn
+        </a>
+        <button
+          type="button"
+          className="resume"
+          onClick={() => window.open('/EshikaKumari_Resume.pdf', '_blank')}
+        >
+          My Resume
+        </button>
+      </div>
+    </section>
+  );
+};
 
-export default Hero
+export default Hero;

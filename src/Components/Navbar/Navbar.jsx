@@ -1,35 +1,128 @@
-import React from 'react'
-import "./Navbar.css"
-import logo from "../../assets/eshika_logo_svg.svg"
-import {useState,useRef} from "react"
-import cross from "../../assets/cross1.svg"
-import menubar from "../../assets/menu.svg"
-import AnchorLink from "react-anchor-link-smooth-scroll"
-const Navbar = () => {
-  const [menu,setmenu]=useState("home");
-  const menuref=useRef();
-  const openMenu=()=>{
-   menuref.current.style.right='0';
-  }
-  const closeMenu=()=>{
-     menuref.current.style.right='-350px';
+import React, { useState } from 'react';
+import './Navbar.css';
+import logo from '../../assets/eshika_logo_svg.svg';
+import cross from '../../assets/cross1.svg';
+import menubar from '../../assets/menu.svg';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { FiSun, FiMoon } from 'react-icons/fi';
 
-  }
+const Navbar = ({ theme, toggleTheme }) => {
+  const [activeMenu, setActiveMenu] = useState('home');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const openMenu = () => setIsMenuOpen(true);
+  const closeMenu = () => setIsMenuOpen(false);
+
+  const handleNavClick = (section) => {
+    setActiveMenu(section);
+    closeMenu();
+  };
+
   return (
-    <div class="navbar">
-      <img src={logo} alt="logo" className="logo" />
-      <img src={menubar} alt="menu" className="menu-open" onClick={openMenu}/>
-      <ul class="navlinks" ref={menuref}>
-        <img src={cross} alt="cross" className="menu-close" onClick={closeMenu} />
-        <li><AnchorLink className="anchor-links" href=""><p onClick={()=>{setmenu('home')}} className={menu==='home'?'active':''}>Home</p></AnchorLink></li>
-        <li><AnchorLink className="anchor-links" offset={50} href="#about"><p onClick={()=>{setmenu('about')}} className={menu==='about'?'active':''}>About Me</p></AnchorLink></li>
-        <li><AnchorLink className="anchor-links" offset={50} href="#skills"><p onClick={()=>{setmenu('skills')}} className={menu==='skills'?'active':''}>Skills</p></AnchorLink></li>
-        <li><AnchorLink className="anchor-links" offset={50} href="#projects"><p onClick={()=>{setmenu('project')}} className={menu==='project'?'active':''}>Projects</p></AnchorLink></li>
-        <li><AnchorLink className="anchor-links" offset={50} href="#contact"><p onClick={()=>{setmenu('contacts')}} className={menu==='contacts'?'active':''}>Contact</p></AnchorLink></li>
-      </ul>
-      
-      <div className="connect"><AnchorLink className="anchor-links" offset={50} href="#contact">Connect With me</AnchorLink></div>
-    </div>
-  )
-}
-export default Navbar
+    <header className="navbar-wrapper">
+      <nav className="navbar" aria-label="Main Navigation">
+        <a href="#home" className="logo-link" aria-label="Eshika Kumari Home">
+          <img src={logo} alt="Eshika Kumari Logo" className="logo" />
+        </a>
+
+        {/* Mobile menu backdrop */}
+        {isMenuOpen && <div className="nav-backdrop" onClick={closeMenu} aria-hidden="true" />}
+
+        <ul className={`navlinks ${isMenuOpen ? 'nav-open' : ''}`}>
+          <li className="menu-close-item">
+            <button
+              type="button"
+              className="menu-close-btn"
+              onClick={closeMenu}
+              aria-label="Close navigation menu"
+            >
+              <img src={cross} alt="" className="menu-close" />
+            </button>
+          </li>
+          <li>
+            <AnchorLink className="anchor-links" href="#home">
+              <span
+                onClick={() => handleNavClick('home')}
+                className={`nav-item ${activeMenu === 'home' ? 'active' : ''}`}
+              >
+                Home
+              </span>
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink className="anchor-links" offset={60} href="#about">
+              <span
+                onClick={() => handleNavClick('about')}
+                className={`nav-item ${activeMenu === 'about' ? 'active' : ''}`}
+              >
+                About Me
+              </span>
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink className="anchor-links" offset={60} href="#skills">
+              <span
+                onClick={() => handleNavClick('skills')}
+                className={`nav-item ${activeMenu === 'skills' ? 'active' : ''}`}
+              >
+                Skills
+              </span>
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink className="anchor-links" offset={60} href="#projects">
+              <span
+                onClick={() => handleNavClick('projects')}
+                className={`nav-item ${activeMenu === 'projects' ? 'active' : ''}`}
+              >
+                Projects
+              </span>
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink className="anchor-links" offset={60} href="#contact">
+              <span
+                onClick={() => handleNavClick('contact')}
+                className={`nav-item ${activeMenu === 'contact' ? 'active' : ''}`}
+              >
+                Contact
+              </span>
+            </AnchorLink>
+          </li>
+        </ul>
+
+        <div className="navbar-actions">
+          {/* Theme Toggle Button */}
+          <button
+            type="button"
+            className="theme-toggle-btn"
+            onClick={toggleTheme}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {theme === 'dark' ? <FiSun className="theme-icon sun" /> : <FiMoon className="theme-icon moon" />}
+          </button>
+
+          {/* Connect button (desktop) */}
+          <div className="connect">
+            <AnchorLink className="anchor-links" offset={60} href="#contact">
+              Connect With me
+            </AnchorLink>
+          </div>
+
+          {/* Hamburger toggle for mobile */}
+          <button
+            type="button"
+            className="menu-open-btn"
+            onClick={openMenu}
+            aria-label="Open navigation menu"
+          >
+            <img src={menubar} alt="" className="menu-open" />
+          </button>
+        </div>
+      </nav>
+    </header>
+  );
+};
+
+export default Navbar;
