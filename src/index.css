@@ -23,11 +23,11 @@
   --theme-toggle-color: #fbd38d;
 
   /* Shared Spacing & Layout Tokens */
-  --section-padding-y: clamp(3.5rem, 5vw, 5rem);
+  --section-padding-y: clamp(2.8rem, 4.5vw, 4.5rem);
   --section-max-width: 1180px;
-  --container-padding-x: clamp(1.2rem, 3.5vw, 2rem);
-  --heading-content-gap: clamp(2.5rem, 3.8vw, 3.5rem);
-  --card-gap: clamp(1.4rem, 2.2vw, 2rem);
+  --container-padding-x: clamp(1rem, 3.5vw, 2rem);
+  --heading-content-gap: clamp(2rem, 3.2vw, 3rem);
+  --card-gap: clamp(1.2rem, 2.2vw, 2rem);
   --card-radius: 22px;
 }
 

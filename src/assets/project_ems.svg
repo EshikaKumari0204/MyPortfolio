@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradEms" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181524"/>
+      <stop offset="50%" stop-color="#12101a"/>
+      <stop offset="100%" stop-color="#0d0c13"/>
+    </linearGradient>
+
+    <!-- Admin Purple Gradient -->
+    <linearGradient id="adminGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c026d3"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+
+    <!-- Employee Accent Gradient -->
+    <linearGradient id="empGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+
+    <!-- Connecting Line Gradient -->
+    <linearGradient id="linkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c026d3"/>
+      <stop offset="50%" stop-color="#b415ff"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9333ea" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#9333ea" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGradEms)"/>
+  <circle cx="400" cy="225" r="240" fill="url(#centerGlow)"/>
+
+  <!-- Subtle Connecting Network Graphic -->
+  <g opacity="0.35">
+    <line x1="285" y1="205" x2="515" y2="205" stroke="url(#linkGrad)" stroke-width="2.5" stroke-dasharray="6,6"/>
+    <circle cx="400" cy="205" r="5" fill="#b415ff"/>
+  </g>
+
+  <!-- Ambient Shadows -->
+  <ellipse cx="285" cy="345" rx="75" ry="12" fill="#000000" opacity="0.4"/>
+  <ellipse cx="515" cy="345" rx="75" ry="12" fill="#000000" opacity="0.4"/>
+
+  <!-- ==================== ADMIN (LEFT, centered at x=285) ==================== -->
+  <g id="admin-figure">
+    <!-- Admin Shield / Badge above head -->
+    <g transform="translate(285, 96)">
+      <circle cx="0" cy="0" r="18" fill="#261b3d" stroke="#c026d3" stroke-width="2"/>
+      <!-- Shield icon -->
+      <path d="M 0 -8 L 8 -4 L 8 1 C 8 6 4 10 0 12 C -4 10 -8 6 -8 1 L -8 -4 Z" fill="url(#adminGrad)"/>
+    </g>
+
+    <!-- Head -->
+    <circle cx="285" cy="165" r="38" fill="#f5f3ff" stroke="#e0e7ff" stroke-width="2"/>
+    <!-- Sleek Hair / Accent -->
+    <path d="M 248 162 C 248 132 262 127 285 127 C 308 127 322 132 322 162 C 314 148 300 144 285 144 C 270 144 256 148 248 162 Z" fill="#4c1d95"/>
+
+    <!-- Torso / Suit -->
+    <path d="M 230 305 C 230 240 248 220 285 220 C 322 220 340 240 340 305 Z" fill="url(#adminGrad)"/>
+    <!-- Collar Detail -->
+    <polygon points="285,258 270,220 300,220" fill="#ffffff" opacity="0.9"/>
+    <polygon points="285,278 281,250 289,250" fill="#3b0764"/>
+
+    <!-- Admin Label Badge -->
+    <g transform="translate(285, 335)">
+      <rect x="-48" y="-14" width="96" height="28" rx="14" fill="#241438" stroke="#c026d3" stroke-width="1.5"/>
+      <text x="0" y="4" font-family="'Outfit', system-ui, sans-serif" font-size="13" font-weight="600" fill="#f5d0fe" text-anchor="middle" letter-spacing="1">ADMIN</text>
+    </g>
+  </g>
+
+  <!-- ==================== EMPLOYEE (RIGHT, centered at x=515) ==================== -->
+  <g id="employee-figure">
+    <!-- User / ID Tag Icon above head -->
+    <g transform="translate(515, 96)">
+      <circle cx="0" cy="0" r="18" fill="#311f18" stroke="#ea580c" stroke-width="2"/>
+      <!-- ID Badge / Card Icon -->
+      <rect x="-7" y="-7" width="14" height="15" rx="3" fill="url(#empGrad)"/>
+      <circle cx="0" cy="-2" r="2.5" fill="#ffffff"/>
+      <rect x="-4" y="3" width="8" height="2" rx="1" fill="#ffffff"/>
+    </g>
+
+    <!-- Head -->
+    <circle cx="515" cy="165" r="38" fill="#fef3c7" stroke="#fde68a" stroke-width="2"/>
+    <!-- Hair / Accent -->
+    <path d="M 478 162 C 478 132 492 127 515 127 C 538 127 552 132 552 162 C 544 146 530 142 515 142 C 500 142 486 146 478 162 Z" fill="#78350f"/>
+
+    <!-- Torso / Shirt -->
+    <path d="M 460 305 C 460 240 478 220 515 220 C 552 220 570 240 570 305 Z" fill="url(#empGrad)"/>
+    <!-- Lanyard & ID badge -->
+    <path d="M 505 220 L 515 258 L 525 220" fill="none" stroke="#fed7aa" stroke-width="2"/>
+    <rect x="507" y="258" width="16" height="20" rx="3" fill="#ffffff" opacity="0.95"/>
+    <rect x="510" y="262" width="10" height="3" rx="1" fill="#ea580c"/>
+    <rect x="510" y="268" width="10" height="2" rx="0.5" fill="#9a3412"/>
+
+    <!-- Employee Label Badge -->
+    <g transform="translate(515, 335)">
+      <rect x="-56" y="-14" width="112" height="28" rx="14" fill="#301710" stroke="#ea580c" stroke-width="1.5"/>
+      <text x="0" y="4" font-family="'Outfit', system-ui, sans-serif" font-size="13" font-weight="600" fill="#fed7aa" text-anchor="middle" letter-spacing="1">EMPLOYEE</text>
+    </g>
+  </g>
+</svg>
+

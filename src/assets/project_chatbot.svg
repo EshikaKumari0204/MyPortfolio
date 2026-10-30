@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181524"/>
+      <stop offset="50%" stop-color="#12101a"/>
+      <stop offset="100%" stop-color="#0d0c13"/>
+    </linearGradient>
+    
+    <radialGradient id="glowGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#b415ff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#b415ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Robot Head Gradient -->
+    <linearGradient id="robotBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f3ff"/>
+      <stop offset="100%" stop-color="#d8d2f0"/>
+    </linearGradient>
+
+    <!-- Ear/Accent Gradient -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#da7c25"/>
+      <stop offset="100%" stop-color="#b415ff"/>
+    </linearGradient>
+
+    <!-- Visor Gradient -->
+    <linearGradient id="visorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c192b"/>
+      <stop offset="100%" stop-color="#2a253d"/>
+    </linearGradient>
+
+    <!-- Eye Glow -->
+    <filter id="eyeGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  <circle cx="400" cy="225" r="220" fill="url(#glowGlow)"/>
+
+  <!-- Subtle Ambient Shadow under Robot -->
+  <ellipse cx="400" cy="355" rx="110" ry="16" fill="#000000" opacity="0.45"/>
+
+  <!-- Decorative Sparkles/Dots -->
+  <g opacity="0.6">
+    <path d="M 230 140 Q 230 155 215 155 Q 230 155 230 170 Q 230 155 245 155 Q 230 155 230 140 Z" fill="#da7c25"/>
+    <path d="M 580 270 Q 580 280 570 280 Q 580 280 580 290 Q 580 280 590 280 Q 580 280 580 270 Z" fill="#b415ff"/>
+    <circle cx="210" cy="260" r="3" fill="#b415ff" opacity="0.5"/>
+    <circle cx="590" cy="140" r="4" fill="#da7c25" opacity="0.5"/>
+  </g>
+
+  <!-- Speech Bubble (Right) -->
+  <g transform="translate(515, 110)">
+    <rect x="0" y="0" width="85" height="52" rx="16" fill="#241f36" stroke="rgba(180, 21, 255, 0.4)" stroke-width="1.5"/>
+    <path d="M 12 52 L 2 64 L 26 52 Z" fill="#241f36"/>
+    <!-- 3 dots -->
+    <circle cx="26" cy="26" r="4.5" fill="#da7c25"/>
+    <circle cx="42.5" cy="26" r="4.5" fill="#f87171"/>
+    <circle cx="59" cy="26" r="4.5" fill="#b415ff"/>
+  </g>
+
+  <!-- ROBOT ILLUSTRATION (Centered at x=400) -->
+  <g id="robot">
+    <!-- Antenna -->
+    <rect x="395" y="105" width="10" height="35" rx="5" fill="#a59bc8"/>
+    <circle cx="400" cy="100" r="14" fill="url(#accentGrad)" filter="url(#eyeGlow)"/>
+    <circle cx="400" cy="100" r="6" fill="#ffffff"/>
+
+    <!-- Left & Right Ears -->
+    <rect x="272" y="195" width="22" height="52" rx="10" fill="url(#accentGrad)"/>
+    <rect x="506" y="195" width="22" height="52" rx="10" fill="url(#accentGrad)"/>
+
+    <!-- Head Base -->
+    <rect x="286" y="135" width="228" height="175" rx="52" fill="url(#robotBody)" stroke="#ffffff" stroke-width="2"/>
+
+    <!-- Visor Face Plate -->
+    <rect x="314" y="165" width="172" height="115" rx="34" fill="url(#visorGrad)"/>
+
+    <!-- Glowing Eyes (Emoji style) -->
+    <g filter="url(#eyeGlow)">
+      <!-- Left Eye -->
+      <rect x="340" y="195" width="34" height="42" rx="17" fill="#00e5ff"/>
+      <circle cx="354" cy="207" r="5" fill="#ffffff"/>
+
+      <!-- Right Eye -->
+      <rect x="426" y="195" width="34" height="42" rx="17" fill="#00e5ff"/>
+      <circle cx="440" cy="207" r="5" fill="#ffffff"/>
+    </g>
+
+    <!-- Friendly Smile -->
+    <path d="M 382 254 Q 400 266 418 254" fill="none" stroke="#00e5ff" stroke-width="4.5" stroke-linecap="round"/>
+
+    <!-- Cheek Blushes -->
+    <circle cx="334" cy="248" r="8" fill="#ff76ac" opacity="0.45"/>
+    <circle cx="466" cy="248" r="8" fill="#ff76ac" opacity="0.45"/>
+
+    <!-- Neck / Small Body Base -->
+    <path d="M 368 310 L 432 310 L 442 332 L 358 332 Z" fill="#b9b0db"/>
+  </g>
+</svg>
+

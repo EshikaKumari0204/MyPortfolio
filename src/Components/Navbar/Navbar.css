@@ -13,9 +13,9 @@
 
 .navbar {
   display: flex;
-  max-width: 1300px;
+  max-width: var(--section-max-width, 1180px);
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1rem var(--container-padding-x, 2rem);
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
@@ -242,7 +242,11 @@
 
 @media (max-width: 430px) {
   .navbar {
-    padding: 0.75rem 1rem;
+    padding: 0.75rem var(--container-padding-x, 1rem);
+  }
+
+  .navbar-actions {
+    gap: 0.75rem;
   }
 
   .navbar .logo {
@@ -256,5 +260,25 @@
 
   .theme-icon {
     font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .navbar {
+    padding: 0.75rem 0.75rem;
+  }
+
+  .navbar .logo {
+    height: 1.95rem;
+    max-width: 7.5rem;
+  }
+
+  .navbar-actions {
+    gap: 0.5rem;
+  }
+
+  .theme-toggle-btn {
+    width: 35px;
+    height: 35px;
   }
 }

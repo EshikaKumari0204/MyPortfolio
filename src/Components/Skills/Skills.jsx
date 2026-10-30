@@ -20,7 +20,7 @@ const skillsData = [
   { name: 'C++', icon: cpp, alt: 'C++ logo' },
   { name: 'MongoDB', icon: mongodb, alt: 'MongoDB logo' },
   { name: 'MySQL', icon: mysql, alt: 'MySQL logo' },
-  { name: 'Machine Learning', icon: ml, alt: 'TensorFlow / Machine Learning logo' }
+  { name: 'AI and ML', icon: ml, alt: 'TensorFlow / Machine Learning logo' }
 ];
 
 const Skills = () => {

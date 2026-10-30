@@ -11,7 +11,7 @@
 
 .project-heading h1 {
   text-align: center;
-  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-size: clamp(1.75rem, 3.2vw, 2.8rem);
   font-weight: 700;
   color: #b415ff;
   transition: color 0.3s ease;
@@ -101,34 +101,6 @@
   font-weight: 500;
 }
 
-/* Tech icon badges row */
-.tech-icons-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  justify-content: center;
-  align-items: center;
-  margin-top: -0.2rem;
-}
-
-.tech-icon-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  transition: transform 0.2s ease, border-color 0.2s ease;
-  cursor: default;
-}
-
-.tech-icon-badge:hover {
-  transform: translateY(-2px);
-  border-color: var(--border-hover);
-}
-
 .gotogit {
   display: flex;
   justify-content: center;
@@ -168,18 +140,30 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.8rem;
   }
+
+  .projects-container .project-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 460px;
+    justify-self: center;
+    width: 100%;
+  }
 }
 
 @media (max-width: 720px) {
   .project-section {
-    gap: 2.5rem;
-    margin: 2.5rem auto 4.5rem;
+    gap: 2.2rem;
+    margin: 2.2rem auto 3.2rem;
   }
 
   .projects-container {
     grid-template-columns: 1fr;
     max-width: 420px;
     margin: 0 auto;
+  }
+
+  .projects-container .project-card:last-child:nth-child(odd) {
+    grid-column: auto;
+    max-width: 100%;
   }
 
   .project-image-container {
@@ -190,11 +174,13 @@
 @media (max-width: 480px) {
   .project-section {
     padding: 0 1rem;
+    margin: 2rem auto 3rem;
   }
 
   .project-card {
     padding: 1.1rem;
     border-radius: 18px;
+    gap: 1rem;
   }
 
   .project-image-container {
@@ -203,5 +189,29 @@
 
   .project-title {
     font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .project-section {
+    padding: 0 0.75rem;
+  }
+
+  .project-image-container {
+    height: 155px;
+  }
+
+  .project-title {
+    font-size: 1.05rem;
+  }
+
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: 2px 8px;
+  }
+
+  .github-link {
+    font-size: 0.88rem;
+    padding: 0.5rem 1rem;
   }
 }

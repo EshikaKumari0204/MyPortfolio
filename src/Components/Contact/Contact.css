@@ -11,7 +11,7 @@
 
 .contact-title h1 {
   text-align: center;
-  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-size: clamp(1.75rem, 3.2vw, 2.8rem);
   font-weight: 700;
   color: #b415ff;
   transition: color 0.3s ease;
@@ -37,7 +37,7 @@
 }
 
 .contact-left h2 {
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-size: clamp(1.75rem, 3.5vw, 2.8rem);
   font-weight: 700;
   background: var(--gradient-text);
   background-clip: text;
@@ -215,19 +215,24 @@
 /* Responsiveness */
 @media (max-width: 860px) {
   .contact {
-    gap: 2.5rem;
-    margin: 2.5rem auto 4.5rem;
+    gap: 2.2rem;
+    margin: 2.2rem auto 3.2rem;
   }
 
   .contact-container {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2.2rem;
   }
 }
 
 @media (max-width: 480px) {
   .contact {
     padding: 0 1rem;
+    margin: 2rem auto 3rem;
+  }
+
+  .contact-left h2 {
+    font-size: 1.65rem;
   }
 
   .ready-to-work {
@@ -240,12 +245,27 @@
 
   .form-group input,
   .form-group textarea {
-    padding: 0.8rem 1rem;
-    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
+    font-size: 1rem; /* Preserves 16px to prevent iOS auto-zoom */
   }
 
   .submitnow {
     width: 100%;
     padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .contact {
+    padding: 0 0.75rem;
+  }
+
+  .contact-left h2 {
+    font-size: 1.45rem;
+  }
+
+  .contact-info {
+    font-size: 0.86rem;
+    gap: 0.6rem;
   }
 }

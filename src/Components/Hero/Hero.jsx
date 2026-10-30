@@ -6,17 +6,19 @@ const Hero = () => {
   return (
     <section id="home" className="hero-section reveal-on-scroll">
       <div className="hero-avatar-wrapper">
-        <img
-          src={profile_pic}
-          alt="Eshika Kumari"
-          className="hero-avatar"
-        />
+        <div className="hero-avatar-frame">
+          <img
+            src={profile_pic}
+            alt="Eshika Kumari"
+            className="hero-avatar"
+          />
+        </div>
       </div>
       <h1>
-        <span>I'm Eshika Kumari</span>, Web Developer crafting intuitive web experience.
+        <span>I'm Eshika</span>, Full Stack Web Developer crafting intuitive web experience.
       </h1>
       <p className="hero-description">
-        I am a Computer Science student exploring Full Stack Development building clean and responsive user-friendly interface
+        Developer by skill, problem solver by nature, curious about everything 
       </p>
       <div className="herobuttons">
         <a
@@ -30,7 +32,7 @@ const Hero = () => {
         <button
           type="button"
           className="resume"
-          onClick={() => window.open('/EshikaKumari_Resume.pdf', '_blank')}
+          onClick={() => window.open('/ResumeEshikaKumari.pdf', '_blank')}
         >
           My Resume
         </button>
